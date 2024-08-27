@@ -25,6 +25,8 @@ services:
 
     App\Application\Post\PostService: ~
     App\Application\User\UserService: ~
+    App\Infrastructure\Post\Service\Validator: ~
 
     App\Domain\Post\Application\PostServiceInterface: '@App\Application\Post\PostService'
     App\Domain\User\Application\UserServiceInterface: '@App\Application\User\UserService'
+    App\Domain\Post\Service\Validator: '@App\Infrastructure\Post\Service'

@@ -11,7 +11,7 @@ class PostService implements PostServiceInterface
 {
     public function __construct(
         private PostRepositoryInterface $postRepository,
-        private UserServiceInterface $userService
+        private UserServiceInterface $userService,
     ) {}
 
     public function create(CreatePostRequestDTO $request): int

@@ -7,6 +7,9 @@ use App\Domain\User\Repository\UserRepositoryInterface;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
+/**
+ * @extends ServiceEntityRepository<User>
+ */
 class DoctrineUserRepository extends ServiceEntityRepository implements UserRepositoryInterface
 {
 

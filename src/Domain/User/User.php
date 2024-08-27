@@ -2,6 +2,8 @@
 
 namespace App\Domain\User;
 
+use App\Domain\Post\Post;
+
 class User
 {
     private int $id;
@@ -10,7 +12,7 @@ class User
      * @param string $email
      * @param string $firstName
      * @param string $lastName
-     * @param any $posts
+     * @param iterable<Post> $posts
      */
     public function __construct(
         private string $email,
@@ -22,6 +24,11 @@ class User
     public function getId(): int
     {
         return $this->id;
+    }
+
+    public function setId(int $id): void
+    {
+        $this->id = $id;
     }
 
     public function getEmail(): string
@@ -54,8 +61,11 @@ class User
         $this->lastName = $lastName;
     }
 
-    public function getPosts(): array
+    /**
+     * @return iterable<Post>
+     */
+    public function getPosts(): iterable
     {
-        return $this->posts->toArray();
+        return $this->posts;
     }
 }

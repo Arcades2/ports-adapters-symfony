@@ -9,7 +9,7 @@ interface PostServiceInterface
     /**
      * create a new post
      *
-     * @param CreatePostRequestDTO $CreatePostRequestDTO
+     * @param CreatePostRequestDTO $request
      * @return int
      */
     public function create(CreatePostRequestDTO $request): int;

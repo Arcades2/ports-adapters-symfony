@@ -3,8 +3,12 @@
 namespace App\Domain\User\Repository;
 
 use App\Domain\User\User;
+use Doctrine\Persistence\ObjectRepository;
 
-interface UserRepositoryInterface
+/**
+ * @extends ObjectRepository<User>
+ */
+interface UserRepositoryInterface extends ObjectRepository
 {
     /**
      * @return User[]
@@ -12,7 +16,7 @@ interface UserRepositoryInterface
     public function findAll(): array;
 
     /**
-     * @param string $id
+     * @param int $id
      * @return User|null
      */
     public function get(int $id): ?User;

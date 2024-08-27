@@ -1,0 +1,11 @@
+App\Domain\Post\Post:
+    properties:
+        content:
+            - NotBlank: ~
+        link:
+            - NotBlank: ~
+            - Url:
+                requireTld: true
+        author:
+            - NotBlank: ~
+

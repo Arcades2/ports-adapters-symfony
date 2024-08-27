@@ -10,6 +10,29 @@ class Post
 
     private int $id;
 
+    /**
+     * @param array{
+     *  content: string,
+     *  link: string,
+     *  author: User
+     * } $data
+     */
+    static function create(array $data): Post
+    {
+        return new self(
+            $data['content'],
+            $data['link'],
+            $data['author'],
+            new \DateTime()
+        );
+    }
+
+    /**
+     * @param string $content
+     * @param string $link
+     * @param User $author
+     * @param DateTimeInterface $createdAt
+     */
     public function __construct(
         private string $content,
         private string $link,

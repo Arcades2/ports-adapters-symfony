@@ -8,7 +8,7 @@ use App\Domain\User\User;
 interface UserServiceInterface
 {
     /**
-     * @param CreateUserRequestDTO $CreateUserRequestDTO
+     * @param CreateUserRequestDTO $request
      * @return int
      */
     public function create(CreateUserRequestDTO $request): int;
